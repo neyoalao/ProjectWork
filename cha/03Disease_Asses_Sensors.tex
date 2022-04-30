@@ -1,0 +1,69 @@
+
+\chapter{Disease Assessment Sensors}\label{cha:acessDisease} 
+Practical and less time-consuming monitoring of plant diseases is possible using image-based technologies like hyperspectral imaging, Red-Green-Blue (RGB) channel images, and spectroscopy. 
+% RGB and hyperspectral imaging sensors are commonly used in research papers for non-invasive disease monitoring and detection.
+In research papers, RGB and hyperspectral imaging sensors are usually used for non-invasive disease monitoring and detection. Section \ref{rgb} and \ref{hyperspectral} of the paper explains RGB and hyperspectral image-based technologies, respectively, including figures to give a visual explanation of each technique. In addition, the respective sections briefly review studies that used these sensors for disease detection. Finally, the chapter concludes with a summary of the discussed techniques found in research papers.
+
+% ✅✅
+% \item what is RGB image
+\section{RGB Image}\label{rgb}
+An RGB image is a coloured image with each pixel containing a particular red, green, and blue value based on the colour model. Each colour channel in the RGB image account for an 8-bit monochrome value per pixel out of the total 24-bit / pixel \cite{padmavathi2016implementation}. This means that each channel can take a value within the range of 0 up to 255.
+
+The hue - the pure colour of the pixel without tint or shade - is the essential characteristic for differentiating between healthy and diseased plants from an RGB image in precision farming \cite{bock2010plant}. The colour information an RGB image holds allows for a conversion of the image into 14 different colour spaces possessing 86 various colour features \cite{shrivastava2015exploring}.
+
+Moreover, using RGB images for plant disease detection relates to the conventional way of visually identifying plant disease based on colour changes to the leaves using the human eyes. The access to all the colour information of a plant captured by an RGB image 
+ which is helpful for plant disease detection, mainly when used with machine learning models to allow for automatic detections \cite{shin2021deep}.
+% ✅✅✅✅
+% \item what is hyperspectral imaging. what is the wavelength?
+\section{Hyperspectral Imaging}\label{hyperspectral}
+Hyperspectral technology is a non-destructive and non-invasive detection technology that can obtain a large amount of narrow and continuous band spectral information from objects in the electromagnetic spectrum regions. Therefore, monitoring changes in the compositional structure of target objects is possible from the spectral data obtained by a hyperspectral imaging system.
+
+Hyperspectral imaging (HSI) is the method of acquiring a hyperspectral image that contains an object’s spectral and spatial information as an image in 3-d stored in a spectral cube using a spectrograph coupled with a digital image sensor like CMOS or CMOS \cite{nguyen2021early, bock2010plant}. The structural and chemical changes that occur during plants reactions to disease pathogens have a direct influence on the reflectance spectra of plants leaves, which HSI can pick up; hence the reason for their usage in plant disease detection \cite{kuska2015proximal}. This capability makes HSI cameras vital in monitoring diseases in a sugar beet plantation since subtle differences in the spectral information of the leaves can be detected using HSI and could indicate an early detection of diseases in the plant.
+
+Hence, with HSI, early detection of disease symptoms can be discovered using the spectral signatures of plant leaves and even soil-borne diseases \cite{kuska2015proximal, hillnhutter2010hyperspectral}. 
+%The abundance of researches in plant disease detection using HSI is evidence of the strength and reliability of this technology for plant disease severity monitoring \cite{nagasubramanian2019plant, ochoa2016hyperspectral, yuan2019detection, moghadam2017plant}.
+
+It is worthy to note that the range of wavelengths an HSI device can detect is dependent on the sensitivity range of the digital sensor device possesses, and also the spectral dispersion optics \cite{bock2010plant}. The bands of wavelengths documented in some plant disease detection researches are 400 nm - 2500 nm \cite{hillnhutter2011remote}, 400 nm - 1000 nm \cite{kuska2015proximal}.
+
+\subsection*{Example Approaches}
+
+% \begin{enumerate}
+
+
+\item \cite{yones2019ajab} in their paper employed HSI to detect the infestation of Cotton leafworm, Aphid and Whiteflies diseases in a sugar beet plantation in the Minya governorate of Egypt. The study aimed at identifying the optimal spectral zone and spectral wavelength for detecting certain diseases in a sugar beet plant leaf. They used the hand-held ASD field spectrometer with a 350 - 2500 nm spectral range to acquire their spectral datasets. Twenty spectral image samples of the leaves were taken during the young and old sugar beet plant vegetative growth stages. Tukey’s HSD (honestly significant difference) test analysed and separated the datasets into healthy and unhealthy plant leaves. It was discovered that the blue (0.45-0.51$\mu$m) and NIR (Near Infrared 0.76-0.90$\mu$m) spectral zones were particularly successful in discriminating between healthy and unhealthy sugar beet plant leaves. Likewise, the blue spectral band showed remarkable results in further discriminating between the different disease infestations (Cotton leafworm, Aphid and Whiteflies) in infected sugar beet plants.
+On the other hand, the paper used LSD (linear discriminant analysis) to identify the optimal wavelengths where different diseases are visible. The result of the LSD analysis showed that the SWIR (short wave infrared range) between 1500 and 2000 nm were optimal for identifying the three kinds of diseases mentioned above. Conclusively, they found out that the spectral discrimination of plant health was more visible in older plant leaves. 
+
+\item Likewise, \cite{laudien2005multitemporal} used a supervised knowledge-based classification of hyperspectral vegetation index approach to differentiate between healthy and infected sugar beet plants from their spectral leaf image data obtained in the south of Germany. The leafs’ spectral data were captured using AVIS (Airborne Visible/Near-Infrared Imaging Spectrometer) and a tractor based GVIS (Ground-operated Visible/Near-Infrared Imaging Spectrometer) hyperspectral sensors. The AVIS hyperspectral sensor used can measure detailed spectral reflectance between 400 - 845 nm using 63 channels, a spectral interval of 9 nm, and a resolution of 4 metres. The GVIS sensor, on the other hand, is capable of measuring spectral reflectance between 380 - 860 nm by using 63 spectral channels. The hyperspectral measurement of the sugar beet plant leaves was taken with the two sensors for different intervals in 2003 (June, July, August and September). The study analysed and classified differences between healthy and unhealthy sugar beets plant datasets with a modified version of the Optimised Soil-Adjusted Vegetation Index (OSAVI) equation using ArcGIS 8.3 software. For the classification task, they used the result from the addition of the four OSAVI values obtained from the data acquisition campaign. The quantile classification method of ArcGis was used to classify the combined OSAVI values into nine vitality classes. The lower the class number, the healthier the sugar plant is. They found that $Rhizoctonia solani$ infected only 25\% of the sugar beet plantation field. They concluded that this low infestation detection percentage was attributed to the fact that there was no known $Rhizoctonia solani$ infestation on sugar beets in the research area in the year 2003 and the low spatial resolution of the captured datasets.
+
+\item Also, \cite{hillnhutter2011remote} researched on the detection of stress-induced on a sugar beets plantation infested by $Heterodera schachtii$ and $Rhizoctonia solani$ using HSI sensors. The site used for the research is in Rheinbach, Germany. The field site was already infested with $Heterodera schachtii$ and $Rhizoctonia solani$. Therefore, they applied fertilisers and herbicides to the farmland before planting the Beretta variety of sugar beets. The researchers used Airborne Imaging Spectroradiometer for Applications (AISA, Oulu, Finland), a hand-held non-imaging spectroradiometer (ASD FieldSpec Pro Spectrometer, USA) and Hyperspectral Mapper (HyMap, Australia) imaging sensor for obtaining the spectral leaf data. AISA, ASD and HyMap can capture spectral data within the wavelength of 400 - 2500 nm, 400 - 1050 nm, and 450 - 2500 nm, respectively. AISA and HyMap provide 481 and 126 spectral bands, respectively, between their wavelengths. The 50 image samples obtained using AISA and HyMap were analysed using the Spectral Angle Mapper (SAM) classification method, with a split of 50\% as training and testing dataset. The SAM classification of AISA spectral image at week 31 of the planting season resulted in an accuracy of 72\%. Also, the week 39 spectral image from the plantation season achieved an accuracy of 64\% in classifying the sugar beet plant health. They concluded that despite the inconsistencies in the detection by the different HSI sensors, using canopy reflectance for monitoring disease in sugar beet is a promising approach to take.
+
+% \end{enumerate}
+
+
+
+\begin{table}[h!]
+\centering 
+ \begin{tabular}{p{3cm}|p{2cm}|p{2.5cm}|p{2cm}|p{2cm}|p{2cm}} 
+ 
+%   \begin{tabular*}{\textwidth}{|c|c|c|c|c|c|}
+%   \begin{tabular*}{\textwidth}{c @{\extracolsep{\fill}} c @{\extracolsep{\fill}} cccc}
+
+% \begin{tabular}{p{0.2\textwidth}p{0.2\textwidth}p{0.2\textwidth}p{0.2\textwidth}p{0.2\textwidth}p{0.2\textwidth}}
+ \hline
+  Sensor & Wavelength & Algorithm & Accuracy & Field site & Reference\\ [0.5ex] 
+ \hline\hline
+ hand-held ASD field spectrometer & 350 - 2500 nm & HSD Tukey \& LSD & - & Minya, Egypt& \cite{yones2019ajab} \\ 
+ \hline
+ AVIS \& GVIS spectrometer & 400 - 845 nm \& 380 - 860 nm & quantile method classifier / OSAVI & - &South Germany& \cite{laudien2005multitemporal} \\ 
+ \hline
+  AISA, hand-held ASD field spectrometer \& HyMap spectrometer & 400 - 2500 nm, 400 - 1050 nm, \& 450 - 2500 nm & SAM classifer & AISA 72\%, HyMap 54\% & Rheinbach, Germany & \cite{hillnhutter2011remote} \\ 
+ \hline
+ \end{tabular}
+ \caption{ Overview of hyperspectral imaging methods for discriminant disease detection in Sugar beet.}
+ \label{table:1}
+\end{table}
+
+\FloatBarrier
+
+Overall, it can be concluded that using HSI sensors for the non-invasive health monitoring of sugar beets has shown great potential for discriminant disease detection. Table \ref{table:1} shows the HSI sensors, wavelengths, and algorithm used to monitor sugar beet plants’ health in the reviewed research papers.
+
